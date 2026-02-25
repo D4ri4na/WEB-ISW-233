@@ -1,22 +1,82 @@
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <title>Frontend System Design Fundamentals</title>
-    <link rel="stylesheet" href="./index.css" />
-    <script src="index.js" defer></script>
-  </head>
-  <body>
-    <main id="container"></main>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <template id="card-template"
-      ><article class="card">
+    <link rel="stylesheet" href="index.css" />
+    <script src="index.js" defer type="module"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Noto+Serif:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <title>Exercise DOM API - TODO</title>
+  </head>
+  <body class="page">
+    <div class="page">
+      <header class="header">
+        <nav class="nav">
+          <ul class="nav__links">
+            <li><a class="nav__link" href="#recipes">Elemento 1</a></li>
+            <li>
+              <a class="nav__link" href="#reservation">Elemento 2</a>
+            </li>
+            <li><a class="nav__link" href="#menu">Elemento 3</a></li>
+            <li><a class="nav__link" href="#contact">Elemento 4</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <main id="container" class="main">
+        <div class="container">
+          <h1>ToDo List</h1>
+          <input type="text" id="todo-input" placeholder="Add a new task" />
+          <button id="add-btn">Add</button>
+          <ul id="todo-list" class="todo-list"></ul>
+        </div>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <div class="footer__social">
+            <h3 class="footer__social-heading">Redes sociales</h3>
+            <ul class="footer__list">
+              <li class="footer__list-item">
+                <a href="#" class="footer__social-link"
+                  ><img
+                    src="./images/facebook_white.svg"
+                    alt="Logo Facebook"
+                    class="footer__social-icon"
+                  />
+                  Facebook</a
+                >
+              </li>
+              <li class="footer__list-item">
+                <img
+                  src="./images/instagram_white.svg"
+                  alt="Logo Instagram"
+                  class="footer__social-icon"
+                />
+                <a href="#" class="footer__social-link">Instagram</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__copyright">&copy; 2026 Your Name</div>
+      </footer>
+    </div>
+
+    <template id="card__template">
+      <article class="card">
         <h3 class="card__title"></h3>
         <div class="card__body">
           <div class="card__body__image"></div>
           <section class="card__body__content"></section>
-        </div></article
-    ></template>
+        </div>
+      </article>
+    </template>
   </body>
-  <script></script>
 </html>
