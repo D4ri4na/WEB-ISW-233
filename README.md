@@ -1,15 +1,18 @@
-# WEB-ISW-233
+# Aplicaciones Web I - Ejercicio Observer
 
-Simple todo app with Vanilla JS
+1. Using our last example create a horizontal card 
+  - Change the styles of the cards so they are styled in a horizontal way
+2. When scrolling to the bottom should be loaded new entries without clicking a button
+3. Simulate an infinite scrolling 
 
-You have a code that works but it has several problems 
+Use the db file and the mockDB for generating fake data. for example:
 
-What if we want to:
-- Save the list locally?
-- Add keyboard shortcuts?
-- Make it more complex in the future?
-- Create an undo action?
+```js
+const db = initMockDB({
+  title: "Web app I",
+  body: "Intersection Observer"
+});
 
-Your task:
-- Decouple the project using design patterns!!!
-- Be creative make your to answer the previous questions 
+// to get the next data
+const data = await db.next();
+```
