@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "vite"
+    "dev": "vite",
+    "build": ""
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,7 @@
   },
   "homepage": "https://github.com/deptech-ucb/WEB-ISW-233#readme",
   "devDependencies": {
+    "typescript": "^5.9.3",
     "vite": "^8.0.0"
   },
   "dependencies": {
