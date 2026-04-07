@@ -13,3 +13,6 @@ What if we want to:
 Your task:
 - Decouple the project using design patterns!!!
 - Be creative make your to answer the previous questions 
+
+
+Url: https://gemini.google.com/share/4866ab0113cb

@@ -1,0 +1,22 @@
+{
+  "name": "web-isw-233",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Aplicación web de pedidos de comida",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "web",
+    "app",
+    "food",
+    "order"
+  ],
+  "author": "Dariana Pol A.",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

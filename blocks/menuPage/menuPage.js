@@ -6,15 +6,23 @@ export class MenuPage extends HTMLElement {
     const styles = document.createElement("style");
     this.root.appendChild(styles);
 
+    // 🔥 CORRECCIÓN: Usamos ruta relativa desde raíz
     async function loadCSS() {
-      const request = await fetch("/blocks/MenuPage/MenuPage.css");
-      const css = await request.text();
-      styles.textContent = css;
+      try {
+        // Intentamos cargar desde diferentes rutas
+        let request = await fetch("/blocks/menuPage/menuPage.css");
+        if (!request.ok) {
+          request = await fetch("./blocks/menuPage/menuPage.css");
+        }
+        const css = await request.text();
+        styles.textContent = css;
+      } catch (error) {
+        console.error("Error cargando el CSS:", error);
+      }
     }
     loadCSS();
   }
 
-  // when the component is attached to the DOM
   connectedCallback() {
     const template = document.getElementById("menu-page-template");
     const content = template.content.cloneNode(true);
@@ -23,19 +31,28 @@ export class MenuPage extends HTMLElement {
     window.addEventListener("appmenuchange", () => {
       this.render();
     });
+    
+    // 🔥 Renderizar inmediatamente si ya hay datos
     this.render();
   }
 
   render() {
-    if (app.store.menu) {
-      this.root.querySelector("#menu").innerHTML = "";
+    const menuContainer = this.root.querySelector("#menu");
+    if (!menuContainer) return;
+
+    if (app.store.menu && app.store.menu.length > 0) {
+      menuContainer.innerHTML = "";
       for (let product of app.store.menu) {
         const item = document.createElement("product-item");
         item.dataset.product = JSON.stringify(product);
-        this.root.querySelector("#menu").appendChild(item);
+        menuContainer.appendChild(item);
       }
+    } else if (app.store.menu) {
+      // Si es un array pero está vacío
+      menuContainer.innerHTML = "<h2>No hay productos disponibles 😞</h2>";
     } else {
-      this.root.querySelector("#menu").innerHTML = "Loading...";
+      // Si aún no se han cargado los datos
+      menuContainer.innerHTML = "<h2>Cargando productos... ⏳</h2>";
     }
   }
 }

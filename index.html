@@ -26,12 +26,8 @@
         <nav class="nav">
           <ul class="nav__links">
             <li><a class="nav__link nav__logo" href="/">OrderNow</a></li>
-            <li>
-              <a class="nav__link" href="/products">Products</a>
-            </li>
-            <li>
-              <a class="nav__link" href="/restaurants">Restaurants</a>
-            </li>
+            <li><a class="nav__link" href="/products">Products</a></li>
+            <li><a class="nav__link" href="/restaurants">Restaurants</a></li>
           </ul>
           <a
             class="nav__link nav__order material-symbols-outlined"
@@ -72,13 +68,45 @@
             </ul>
           </div>
         </div>
-        <div class="footer__copyright">&copy; 2025 Your Name</div>
+        <div class="footer__copyright">&copy; 2026 Dariana Pol A.</div>
       </footer>
     </div>
 
     <template id="menu-page-template">
       <section>
         <ul id="menu"></ul>
+      </section>
+    </template>
+
+    <template id="order-page-template">
+      <section class="order-container">
+        <div class="order-header">
+          <h1>🛒 Tu Carrito de Compras</h1>
+          <p>Revisa tus productos antes de confirmar</p>
+        </div>
+        <div class="order-content">
+          <div id="cart-items"></div>
+          <div id="order-total"></div>
+          <div id="empty-cart">
+            <div class="empty-icon">🛒</div>
+            <h2>Tu carrito está vacío</h2>
+            <p>Añade productos desde el menú para comenzar tu pedido</p>
+          </div>
+        </div>
+        <div class="order-actions">
+          <button id="continue-shopping">← Seguir Comprando</button>
+          <button id="checkout-btn">Confirmar Pedido ✓</button>
+        </div>
+      </section>
+    </template>
+
+    <template id="restaurants-page-template">
+      <section class="restaurants-container">
+        <div class="restaurants-header">
+          <h1>🍽️ Nuestros Restaurantes</h1>
+          <p>Elige tu restaurante favorito</p>
+        </div>
+        <div id="restaurants-list"></div>
       </section>
     </template>
 

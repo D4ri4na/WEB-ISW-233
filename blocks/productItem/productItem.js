@@ -11,20 +11,40 @@ export default class ProductItem extends HTMLElement {
 
     this.appendChild(content);
 
-    const product = JSON.parse(this.dataset.product);
-    this.querySelector("h3").textContent = product.name;
-    this.querySelector("img").src = `${product.imageUrl}`;
-    this.querySelector("p.product-card__description").textContent = `${product.description}`;
-    this.querySelector("p.product-card__price").textContent = `${product.price}`;
+    // 🔥 Parse del producto desde dataset
+    let product;
+    try {
+      product = JSON.parse(this.dataset.product);
+    } catch (error) {
+      console.error("Error parseando producto:", error, this.dataset.product);
+      return;
+    }
+    
+    // Rellenar datos del producto
+    const titleEl = this.querySelector("h3");
+    const imgEl = this.querySelector("img");
+    const descEl = this.querySelector("p.product-card__description");
+    const priceEl = this.querySelector("p.product-card__price");
+    
+    if (titleEl) titleEl.textContent = product.title;
+    if (imgEl) {
+      imgEl.src = product.imageUrl;
+      imgEl.alt = product.altText || "Producto";
+    }
+    if (descEl) descEl.textContent = product.description;
+    if (priceEl) priceEl.textContent = product.price;
 
-    this.querySelector(".product-card").addEventListener("click", (event) => {
-      if (event.target.tagName.toLowerCase() == "button") {
-        addToCart(product.id);
-      } else {
-        app.router.go(`/products/${product.id}`);
-      }
-      event.preventDefault();
-    });
+    const cardEl = this.querySelector(".product-card");
+    if (cardEl) {
+      cardEl.addEventListener("click", (event) => {
+        if (event.target.tagName.toLowerCase() == "button") {
+          addToCart(product.id);
+        } else {
+          app.router.go(`/products/${product.id}`);
+        }
+        event.preventDefault();
+      });
+    }
   }
 }
 

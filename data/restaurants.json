@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Pizza Paradise 🍕",
+    "description": "La mejor pizzería de la ciudad con ingredientes frescos",
+    "imageUrl": "https://placehold.co/600x400/FF6347/FFFFFF?text=Pizza+Paradise",
+    "rating": 4.8,
+    "reviews": 234,
+    "deliveryTime": "30-45 min",
+    "deliveryCost": "$2.99"
+  },
+  {
+    "id": 2,
+    "name": "Burger Master 🍔",
+    "description": "Hamburguesas gourmet hechas con carne de primera calidad",
+    "imageUrl": "https://placehold.co/600x400/4682B4/FFFFFF?text=Burger+Master",
+    "rating": 4.6,
+    "reviews": 456,
+    "deliveryTime": "25-40 min",
+    "deliveryCost": "$2.50"
+  },
+  {
+    "id": 3,
+    "name": "Paella Española 🥘",
+    "description": "Auténtica paella valenciana con mariscos frescos",
+    "imageUrl": "https://placehold.co/600x400/FFC107/333333?text=Paella+Espanyola",
+    "rating": 4.9,
+    "reviews": 189,
+    "deliveryTime": "45-60 min",
+    "deliveryCost": "$3.99"
+  },
+  {
+    "id": 4,
+    "name": "Sushi House 🍣",
+    "description": "Sushi fresco preparado por chefs certificados japoneses",
+    "imageUrl": "https://placehold.co/600x400/20B2AA/FFFFFF?text=Sushi+House",
+    "rating": 4.7,
+    "reviews": 367,
+    "deliveryTime": "35-50 min",
+    "deliveryCost": "$4.99"
+  },
+  {
+    "id": 5,
+    "name": "Taco Fiesta 🌮",
+    "description": "Tacos mexicanos auténticos y quesadillas deliciosas",
+    "imageUrl": "https://placehold.co/600x400/FF4500/FFFFFF?text=Taco+Fiesta",
+    "rating": 4.5,
+    "reviews": 512,
+    "deliveryTime": "20-35 min",
+    "deliveryCost": "$1.99"
+  }
+]
